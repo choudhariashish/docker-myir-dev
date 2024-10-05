@@ -56,3 +56,8 @@ cd /share/04-Source/imx-yocto-bsp && ./core.sh
 ```
 cd out/ && ls
 ```
+
+## Flash uboot.
+```
+sudo dd if=imx-boot of=/dev/mmcblk0 bs=1k seek=33
+```
