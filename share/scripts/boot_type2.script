@@ -1,0 +1,147 @@
+# This is a boot script for U-Boot
+# Generate boot.scr:
+# mkimage -c none -A arm -T script -d boot.script boot.scr
+#
+# Generate boot.script (for modifications in boot.scr):
+# dd if=boot.scr of=boot.script bs=72 skip=1
+#
+################
+
+setenv ipaddr 192.168.1.5
+setenv serverip 192.168.1.30
+setenv netmask 255.255.255.0
+setenv ethaddr ab:bc:cd:de:ef:fa
+
+
+P1_KERNEL=/p1/Image
+P1_DTB=/p1/mys-imx8mm-lt8912-hontron-7-v20.dtb
+P1_IMAGE_COUNT=0
+setexpr P1_IMAGE_COUNT 0
+
+P2_KERNEL=/p2/Image
+P2_DTB=/p2/mys-imx8mm-lt8912-hontron-7-v20.dtb
+P2_IMAGE_COUNT=0
+P2_RETRY_FILE=/p2/retry-count
+setexpr P2_IMAGE_COUNT 0
+
+P2_RETRY_COUNT=0
+
+# We are repurposing "jh_clk" for keeping a track of P2 retries.
+setenv P2_RETRY_COUNT ${jh_clk}
+
+
+KERNEL_ADDR=0x40480000
+DTB_ADDR=0x43000000
+
+
+echo "----------------------------------------------------"
+echo "--------------Pluto Boot Selection------------------"
+echo "----------------------------------------------------"
+mmc part
+
+echo "----------------------------------------------------"
+echo "TFTP Images=>"
+tftpboot 0x43000000 boot.scr
+if cmp 0x43000000 0x42000000 0x01; then
+    echo "Booting from tftp"
+else
+    echo "TFTP boot not available"
+fi
+
+
+echo "----------------------------------------------------"
+echo "P1 Images=>"
+
+if test -e mmc 1:1 ${P1_KERNEL}; then
+    echo "Found kernel      : ${P1_KERNEL}"
+    setexpr P1_IMAGE_COUNT ${P1_IMAGE_COUNT} + 1
+fi
+if test -e mmc 1:1 ${P1_DTB}; then
+    echo "Found dtb         : ${P1_DTB}"
+    setexpr P1_IMAGE_COUNT ${P1_IMAGE_COUNT} + 1
+fi
+
+
+echo "----------------------------------------------------"
+echo "P2 Images=>"
+
+if test -e mmc 1:1 ${P2_KERNEL}; then
+    echo "Found kernel      : ${P2_KERNEL}"
+    setexpr P2_IMAGE_COUNT ${P2_IMAGE_COUNT} + 1
+fi
+if test -e mmc 1:1 ${P2_DTB}; then
+    echo "Found dtb         : ${P2_DTB}"
+    setexpr P2_IMAGE_COUNT ${P2_IMAGE_COUNT} + 1
+fi
+
+echo "----------------------------------------------------"
+echo "Image Selection=>"
+
+echo "P1_IMAGE_COUNT => ${P1_IMAGE_COUNT}"
+echo "P2_IMAGE_COUNT => ${P2_IMAGE_COUNT}"
+
+
+if test ${P2_IMAGE_COUNT} = 2; then
+    echo "Found all images for P2"
+
+    # We are unsuccessful 3 times to boot an image on P2.
+    # Hence revert to the image in P1.
+    if test ${P2_RETRY_COUNT} = 3; then
+        echo "Retry count 3, reverting back to P1 partition..."
+        fatrm mmc 1:1 ${P2_KERNEL}
+
+        setenv jh_clk 0
+        saveenv
+        reset
+    fi
+
+
+    # We are successful to boot an image on P2.
+    # Hence continue booting it.
+    if test -e mmc 1:1 /p2/boot_ok; then
+        echo "Found boot_ok, loading P2..."
+
+        fatload mmc 1:1 ${KERNEL_ADDR} ${P2_KERNEL};
+        fatload mmc 1:1 ${DTB_ADDR} ${P2_DTB};
+        setenv bootargs root=/dev/mmcblk1p3 rootwait rw
+        run bootargs;
+
+        setenv jh_clk 0
+        saveenv
+
+        # We expect an image on P2 to put this "boot_ok" back.
+        # This is an indication that P2 is been successfully booting.
+        fatrm mmc 1:1 /p2/boot_ok
+        booti ${KERNEL_ADDR} - ${DTB_ADDR};
+    else
+
+        # We will give P2 3 chances to try booting.
+        # Update the persistent count and boot the P2 image.
+
+        echo "Retry count ${P2_RETRY_COUNT}, loading P2..."
+
+        fatload mmc 1:1 ${KERNEL_ADDR} ${P2_KERNEL};
+        fatload mmc 1:1 ${DTB_ADDR} ${P2_DTB};
+        setenv bootargs root=/dev/mmcblk1p3 rootwait rw
+        run bootargs;
+
+        setexpr jh_clk ${jh_clk} + 1
+        saveenv
+        booti ${KERNEL_ADDR} - ${DTB_ADDR};
+    fi
+fi
+
+
+if test ${P1_IMAGE_COUNT} = 2; then
+    echo "Found all images for P1"
+    echo "Loading P1..."
+
+    setenv jh_clk 0
+    saveenv
+
+    fatload mmc 1:1 ${KERNEL_ADDR} ${P1_KERNEL};
+    fatload mmc 1:1 ${DTB_ADDR} ${P1_DTB};
+    setenv bootargs root=/dev/mmcblk1p2 rootwait ro
+    run bootargs;
+    booti ${KERNEL_ADDR} - ${DTB_ADDR}
+fi

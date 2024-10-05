@@ -1,0 +1,12 @@
+diff --unified --recursive --no-dereference sources-ori/meta-myir/meta-ml/recipes-libraries/armnn/armnn-onnx_git.bb sources/meta-myir/meta-ml/recipes-libraries/armnn/armnn-onnx_git.bb
+--- sources-ori/meta-myir/meta-ml/recipes-libraries/armnn/armnn-onnx_git.bb	2022-05-08 19:32:08.000000000 -0700
++++ sources/meta-myir/meta-ml/recipes-libraries/armnn/armnn-onnx_git.bb	2024-08-26 19:48:24.509450312 -0700
+@@ -2,7 +2,7 @@
+ LICENSE = "MIT"
+ LIC_FILES_CHKSUM = "file://LICENSE;md5=077ce3eaeaea91462d41c566300d2a02"
+ 
+-SRC_URI = "git://github.com/onnx/onnx.git"
++SRC_URI = "git://github.com/onnx/onnx.git;branch=main;protocol=https"
+ 
+ PV = "1.3.0"
+ 

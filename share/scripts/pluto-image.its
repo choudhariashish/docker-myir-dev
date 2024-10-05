@@ -1,0 +1,59 @@
+/dts-v1/;
+
+/ {
+        description = "Nitrogen8M i.MX8M FIT Image";
+        #address-cells = <1>;
+
+        images {
+                kernel {
+                        description = "Kernel";
+                        data = /incbin/("Image");
+                        type = "kernel";
+                        arch = "arm64";
+                        os = "linux";
+                        compression = "none";
+                        load = <0x40480000>;
+                        entry = <0x40480000>;
+                        hash {
+                                algo = "sha1";
+                        };
+                };
+                fdt {
+                        description = "DTB";
+                        data = /incbin/("system.dtb");
+                        type = "flat_dt";
+                        arch = "arm64";
+                        compression = "none";
+                        load = <0x48000000>;
+                        entry = <0x48000000>;
+                        hash {
+                                algo = "sha1";
+                        };
+                };
+                initrd {
+                        description = "Initrd";
+                        data = /incbin/("rootfs.cpio.gz");
+                        type = "ramdisk";
+                        arch = "arm64";
+                        os = "linux";
+                        compression = "none";
+                        hash {
+                                algo = "sha1";
+                        };
+                };
+        };
+
+        configurations {
+                default = "standard";
+                standard {
+                        description = "Standard Boot";
+                        kernel = "kernel";
+                        fdt = "fdt";
+                        ramdisk = "initrd";
+                        hash {
+                                algo = "sha1";
+                        };
+                };
+        };
+
+};   

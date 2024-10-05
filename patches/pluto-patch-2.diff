@@ -1,0 +1,125 @@
+diff --unified --recursive --no-dereference sources-ori/poky/scripts/postinst-intercepts/update_font_cache sources/poky/scripts/postinst-intercepts/update_font_cache
+--- sources-ori/poky/scripts/postinst-intercepts/update_font_cache	2024-08-29 18:15:39.657832120 -0700
++++ sources/poky/scripts/postinst-intercepts/update_font_cache	2024-08-29 18:28:04.042837619 -0700
+@@ -3,7 +3,7 @@
+ # SPDX-License-Identifier: MIT
+ #
+ 
+-set -e
++#set -e
+ 
+-PSEUDO_UNLOAD=1 ${binprefix}qemuwrapper -L $D -E ${fontconfigcacheenv} $D${libexecdir}/${binprefix}fc-cache --sysroot=$D --system-only ${fontconfigcacheparams}
+-chown -R root:root $D${fontconfigcachedir}
++#PSEUDO_UNLOAD=1 ${binprefix}qemuwrapper -L $D -E ${fontconfigcacheenv} $D${libexecdir}/${binprefix}fc-cache --sysroot=$D --system-only ${fontconfigcacheparams}
++#chown -R root:root $D${fontconfigcachedir}
+diff --unified --recursive --no-dereference sources-ori/poky/scripts/postinst-intercepts/update_gio_module_cache sources/poky/scripts/postinst-intercepts/update_gio_module_cache
+--- sources-ori/poky/scripts/postinst-intercepts/update_gio_module_cache	2024-08-29 18:15:39.657832120 -0700
++++ sources/poky/scripts/postinst-intercepts/update_gio_module_cache	2024-08-29 18:28:26.946675430 -0700
+@@ -3,9 +3,9 @@
+ # SPDX-License-Identifier: MIT
+ #
+ 
+-set -e
++#set -e
+ 
+-PSEUDO_UNLOAD=1 ${binprefix}qemuwrapper -L $D $D${libexecdir}/${binprefix}gio-querymodules $D${libdir}/gio/modules/
++#PSEUDO_UNLOAD=1 ${binprefix}qemuwrapper -L $D $D${libexecdir}/${binprefix}gio-querymodules $D${libdir}/gio/modules/
+ 
+-[ ! -e $D${libdir}/gio/modules/giomodule.cache ] ||
+-	chown root:root $D${libdir}/gio/modules/giomodule.cache
++#[ ! -e $D${libdir}/gio/modules/giomodule.cache ] ||
++#	chown root:root $D${libdir}/gio/modules/giomodule.cache
+diff --unified --recursive --no-dereference sources-ori/poky/scripts/postinst-intercepts/update_gtk_icon_cache sources/poky/scripts/postinst-intercepts/update_gtk_icon_cache
+--- sources-ori/poky/scripts/postinst-intercepts/update_gtk_icon_cache	2024-08-29 18:15:39.657832120 -0700
++++ sources/poky/scripts/postinst-intercepts/update_gtk_icon_cache	2024-08-29 18:28:38.105596307 -0700
+@@ -4,14 +4,14 @@
+ #
+ # Post-install intercept for gtk-icon-cache.bbclass
+ 
+-set -e
++#set -e
+ 
+ # Update native pixbuf loaders
+-$STAGING_DIR_NATIVE/${libdir_native}/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders --update-cache
++#$STAGING_DIR_NATIVE/${libdir_native}/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders --update-cache
+ 
+-for icondir in $D/usr/share/icons/*/ ; do
+-    if [ -d $icondir ] ; then
+-        gtk-update-icon-cache -fqt  $icondir
+-    fi
+-done
++#for icondir in $D/usr/share/icons/*/ ; do
++#    if [ -d $icondir ] ; then
++#        gtk-update-icon-cache -fqt  $icondir
++#    fi
++#done
+ 
+diff --unified --recursive --no-dereference sources-ori/poky/scripts/postinst-intercepts/update_gtk_immodules_cache sources/poky/scripts/postinst-intercepts/update_gtk_immodules_cache
+--- sources-ori/poky/scripts/postinst-intercepts/update_gtk_immodules_cache	2024-08-29 18:15:39.657832120 -0700
++++ sources/poky/scripts/postinst-intercepts/update_gtk_immodules_cache	2024-08-29 18:29:03.281417552 -0700
+@@ -3,17 +3,17 @@
+ # SPDX-License-Identifier: MIT
+ #
+ 
+-set -e
++#set -e
+ 
+-if [ -x $D${libexecdir}/${binprefix}gtk-query-immodules-2.0 ]; then
+-    PSEUDO_UNLOAD=1 ${binprefix}qemuwrapper -L $D $D${libexecdir}/${binprefix}gtk-query-immodules-2.0 \
+-        > $D${libdir}/gtk-2.0/2.10.0/immodules.cache &&
+-        sed -i -e "s:$D::" $D${libdir}/gtk-2.0/2.10.0/immodules.cache
+-        chown root:root $D${libdir}/gtk-2.0/2.10.0/immodules.cache
+-fi
+-if [ -x $D${libexecdir}/${binprefix}gtk-query-immodules-3.0 ]; then
+-    PSEUDO_UNLOAD=1 ${binprefix}qemuwrapper -L $D $D${libexecdir}/${binprefix}gtk-query-immodules-3.0 \
+-        > $D${libdir}/gtk-3.0/3.0.0/immodules.cache &&
+-        sed -i -e "s:$D::" $D${libdir}/gtk-3.0/3.0.0/immodules.cache
+-        chown root:root $D${libdir}/gtk-3.0/3.0.0/immodules.cache
+-fi
++#if [ -x $D${libexecdir}/${binprefix}gtk-query-immodules-2.0 ]; then
++#    PSEUDO_UNLOAD=1 ${binprefix}qemuwrapper -L $D $D${libexecdir}/${binprefix}gtk-query-immodules-2.0 \
++#        > $D${libdir}/gtk-2.0/2.10.0/immodules.cache &&
++#        sed -i -e "s:$D::" $D${libdir}/gtk-2.0/2.10.0/immodules.cache
++#        chown root:root $D${libdir}/gtk-2.0/2.10.0/immodules.cache
++#fi
++#if [ -x $D${libexecdir}/${binprefix}gtk-query-immodules-3.0 ]; then
++#    PSEUDO_UNLOAD=1 ${binprefix}qemuwrapper -L $D $D${libexecdir}/${binprefix}gtk-query-immodules-3.0 \
++#        > $D${libdir}/gtk-3.0/3.0.0/immodules.cache &&
++#        sed -i -e "s:$D::" $D${libdir}/gtk-3.0/3.0.0/immodules.cache
++#        chown root:root $D${libdir}/gtk-3.0/3.0.0/immodules.cache
++#fi
+diff --unified --recursive --no-dereference sources-ori/poky/scripts/postinst-intercepts/update_pixbuf_cache sources/poky/scripts/postinst-intercepts/update_pixbuf_cache
+--- sources-ori/poky/scripts/postinst-intercepts/update_pixbuf_cache	2024-08-29 18:15:39.657832120 -0700
++++ sources/poky/scripts/postinst-intercepts/update_pixbuf_cache	2024-08-29 18:28:47.647528596 -0700
+@@ -3,11 +3,11 @@
+ # SPDX-License-Identifier: MIT
+ #
+ 
+-set -e
++#set -e
+ 
+-export GDK_PIXBUF_MODULEDIR=$D${libdir}/gdk-pixbuf-2.0/2.10.0/loaders
+-export GDK_PIXBUF_FATAL_LOADER=1
++#export GDK_PIXBUF_MODULEDIR=$D${libdir}/gdk-pixbuf-2.0/2.10.0/loaders
++#export GDK_PIXBUF_FATAL_LOADER=1
+ 
+-PSEUDO_UNLOAD=1 ${binprefix}qemuwrapper -L $D $D${libdir}/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders \
+-    >$GDK_PIXBUF_MODULEDIR/../loaders.cache && \
+-    sed -i -e "s:$D::g" $GDK_PIXBUF_MODULEDIR/../loaders.cache
++#PSEUDO_UNLOAD=1 ${binprefix}qemuwrapper -L $D $D${libdir}/gdk-pixbuf-2.0/gdk-pixbuf-query-loaders \
++#    >$GDK_PIXBUF_MODULEDIR/../loaders.cache && \
++#    sed -i -e "s:$D::g" $GDK_PIXBUF_MODULEDIR/../loaders.cache
+diff --unified --recursive --no-dereference sources-ori/poky/scripts/postinst-intercepts/update_udev_hwdb sources/poky/scripts/postinst-intercepts/update_udev_hwdb
+--- sources-ori/poky/scripts/postinst-intercepts/update_udev_hwdb	2024-08-29 18:15:39.657832120 -0700
++++ sources/poky/scripts/postinst-intercepts/update_udev_hwdb	2024-08-29 18:28:06.859817687 -0700
+@@ -3,7 +3,7 @@
+ # SPDX-License-Identifier: MIT
+ #
+ 
+-set -e
++#set -e
+ 
+-PSEUDO_UNLOAD=1 ${binprefix}qemuwrapper -L $D $D${libexecdir}/${binprefix}udevadm hwdb --update --root $D
+-chown root:root $D${sysconfdir}/udev/hwdb.bin
++#PSEUDO_UNLOAD=1 ${binprefix}qemuwrapper -L $D $D${libexecdir}/${binprefix}udevadm hwdb --update --root $D
++#chown root:root $D${sysconfdir}/udev/hwdb.bin

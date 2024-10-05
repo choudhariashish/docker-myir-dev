@@ -1,0 +1,8 @@
+[Unit]
+Description=Startup script for Pluto applications.
+
+[Service]
+ExecStart=/usr/bin/pluto-init-script
+
+[Install]
+WantedBy=multi-user.target
