@@ -1,15 +1,14 @@
 # docker-myir-dev
 
 ## One-time docker setup.
-
+```
 sudo apt-get install docker.io
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
-
+```
 
 ## One-time tftp server setup.
-
 ```
 sudo apt-get update && sudo apt-get install xinetd tftpd tftp
 ```
