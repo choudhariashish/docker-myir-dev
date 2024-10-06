@@ -46,7 +46,7 @@ sudo ip addr add 192.168.1.30/24 dev eno1
 ./start-image.sh
 ```
 
-## Images/OS development workflow.
+## Image/OS development workflow.
 ### Build Image (Docker).
 ```
 cd /share/04-Source/imx-yocto-bsp && ./core.sh
