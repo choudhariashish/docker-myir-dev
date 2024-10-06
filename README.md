@@ -1,5 +1,13 @@
 # docker-myir-dev
 
+## Development host.
+```
+Distributor ID: Ubuntu
+Description:    Ubuntu 22.04.4 LTS
+Release:        22.04
+Codename:       jammy
+```
+
 ## One-time docker setup (Host).
 ```
 sudo apt-get install docker.io
@@ -67,7 +75,7 @@ coming soom...
 sudo dd if=imx-boot of=/dev/<your mmc> bs=1k seek=33
 ```
 
-### Do the following on uboot/bootloader cli (Board)"
+### Do the following on uboot/bootloader cli (Board)."
 ```
 tftpboot 0x10000000 fitimage.fit
 bootm 0x10000000
