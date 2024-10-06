@@ -1,6 +1,6 @@
 # docker-myir-dev
 
-## One-time docker setup.
+## One-time docker setup (Host).
 ```
 sudo apt-get install docker.io
 sudo groupadd docker
@@ -8,7 +8,7 @@ sudo usermod -aG docker $USER
 newgrp docker
 ```
 
-## One-time tftp server setup.
+## One-time tftp server setup (Host).
 ```
 sudo apt-get update && sudo apt-get install xinetd tftpd tftp
 ```
@@ -36,27 +36,27 @@ sudo service xinetd restart
 sudo ip addr add 192.168.1.30/24 dev eno1
 ```
 
-## This script will create a docker image.
+## This script will create a docker image (Host).
 ```
 ./create-image.sh
 ```
 
-## This script will start the image.
+## This script will start the image (Host).
 ```
 ./start-image.sh
 ```
 
-## Build Image.
+## Build Image (Docker).
 ```
 cd /share/04-Source/imx-yocto-bsp && ./core.sh
 ```
 
-## Artifacts.
+## Artifacts (Host).
 ```
-cd out/ && ls
+cd out/ && ./fetch-images.sh
 ```
 
-## Flash uboot.
+## Flash uboot (Host).
 ```
 sudo dd if=imx-boot of=/dev/mmcblk0 bs=1k seek=33
 ```
