@@ -46,17 +46,34 @@ sudo ip addr add 192.168.1.30/24 dev eno1
 ./start-image.sh
 ```
 
-## Build Image (Docker).
+## Images/OS development workflow.
+### Build Image (Docker).
 ```
 cd /share/04-Source/imx-yocto-bsp && ./core.sh
 ```
 
-## Artifacts (Host).
+### Artifacts (Host).
 ```
 cd out/ && ./fetch-images.sh
 ```
 
-## Flash uboot (Host).
+### Prepare sdcard (Host).
 ```
-sudo dd if=imx-boot of=/dev/mmcblk0 bs=1k seek=33
+coming soom...
+```
+
+### Flash uboot/bootloader on a sdcard (Host). This can also be done on a running image onboard.
+```
+sudo dd if=imx-boot of=/dev/<your mmc> bs=1k seek=33
+```
+
+### Do the following on uboot/bootloader cli (Board)"
+```
+tftpboot 0x10000000 fitimage.fit
+bootm 0x10000000
+```
+
+## Application development workflow.
+```
+coming soom...
 ```
