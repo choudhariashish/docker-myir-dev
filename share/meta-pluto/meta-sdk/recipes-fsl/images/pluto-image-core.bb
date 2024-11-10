@@ -113,4 +113,6 @@ fakeroot python do_plutopy_rootfs_postprocess_command () {
     bb.warn("do_plutopy_rootfs_postprocess_command")
 }
 
+
+# https://blog.linumiz.com/archives/16540
 ROOTFS_POSTPROCESS_COMMAND += "do_plutosh_rootfs_postprocess_command; do_plutopy_rootfs_postprocess_command;"
