@@ -19,7 +19,7 @@ RUN apt-get install -y vim
 RUN apt-get install -y diffstat
 RUN apt-get install -y gawk
 RUN apt-get install -y git
-
+RUN apt-get install -y u-boot-tools
 
 RUN locale-gen en_US en_US.UTF-8
 RUN dpkg-reconfigure --frontend=noninteractive locales && update-locale LANG=en_US.UTF-8
