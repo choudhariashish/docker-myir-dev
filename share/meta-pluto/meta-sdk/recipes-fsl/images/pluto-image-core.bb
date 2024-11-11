@@ -36,7 +36,6 @@ CORE_IMAGE_EXTRA_INSTALL += " \
     pluto \
 "
 
-
 create_fitimage() {
     ARTIFACTS_DIR=${DEPLOY_DIR}/images/mys-8mmx/
 
@@ -97,7 +96,7 @@ cat << EOF > ${ARTIFACTS_DIR}/pluto-image.its
     };
 };
 EOF
-    cd ${ARTIFACTS_DIR} && mkimage -f pluto-image.its fitimage.fit
+    #cd ${ARTIFACTS_DIR} && mkimage -f pluto-image.its fitimage.fit
 }
 
 
