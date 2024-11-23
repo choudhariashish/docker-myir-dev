@@ -14,6 +14,9 @@ LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
 
+require recipes-fsl/images/imx-image-multimedia.bb
+CONFLICT_DISTRO_FEATURES = "directfb"
+
 inherit logging
 inherit core-image
 
@@ -77,6 +80,8 @@ cat << EOF > ${ARTIFACTS_DIR}/pluto-image.its
             arch = "arm64";
             os = "linux";
             compression = "none";
+            load = <0x00000000>;
+            entry = <0x00000000>;
             hash {
                 algo = "sha1";
             };

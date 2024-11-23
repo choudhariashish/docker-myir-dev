@@ -3,5 +3,5 @@ cp ../share/04-Source/imx-yocto-bsp/build-xwayland/tmp/deploy/images/mys-8mmx/fi
 cp fitimage.fit /tftpboot
 
 printf "\n\nDo the following on uboot cli...\n\n"
-printf "tftpboot 0x10000000 fitimage.fit\n"
-printf "bootm 0x10000000\n"
+printf "tftpboot 0x60000000 fitimage.fit\n"
+printf "bootm 0x60000000\n"
