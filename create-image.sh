@@ -32,7 +32,7 @@ if [ ! -f share/04-Source/mys-8mmx-yocto.tar.gz ]; then
     echo "Prepare build scipt for yocto..."
     echo "#!/bin/bash" >> core.sh
     echo "cp -r ../../meta-pluto sources/" >> core.sh
-    echo "DISTRO=fsl-imx-xwayland MACHINE=mys-8mmx source sources/meta-pluto/tools/pluto-setup-release.sh -b build-xwayland" >> core.sh
+    echo "DISTRO=fsl-imx-xwayland MACHINE=mys-8mmx source sources/meta-myir/tools/myir-setup-release.sh -b build-xwayland" >> core.sh
     echo "bitbake pluto-image-core" >> core.sh
     echo "source ../../scripts/pluto.sh" >> core.sh
     chmod +x core.sh
