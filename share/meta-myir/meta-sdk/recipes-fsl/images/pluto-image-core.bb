@@ -101,7 +101,7 @@ cat << EOF > ${ARTIFACTS_DIR}/pluto-image.its
     };
 };
 EOF
-    #cd ${ARTIFACTS_DIR} && mkimage -f pluto-image.its fitimage.fit
+    cd ${ARTIFACTS_DIR} && mkimage -f pluto-image.its fitimage.fit
 }
 
 
