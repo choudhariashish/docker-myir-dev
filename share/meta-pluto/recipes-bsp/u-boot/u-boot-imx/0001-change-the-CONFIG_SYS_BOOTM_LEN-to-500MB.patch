@@ -1,0 +1,23 @@
+From c92d8273b77fbf7bb5c72db466699829380f1e12 Mon Sep 17 00:00:00 2001
+From: ashish <choudhariashish@gmail.com>
+Date: Fri, 6 Sep 2024 18:55:10 +0000
+Subject: [PATCH] change the CONFIG_SYS_BOOTM_LEN to 500MB
+
+---
+ common/bootm.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/common/bootm.c b/common/bootm.c
+index 3adbceaa38..bc2c32a939 100644
+--- a/common/bootm.c
++++ b/common/bootm.c
+@@ -31,7 +31,8 @@
+ 
+ #ifndef CONFIG_SYS_BOOTM_LEN
+ /* use 8MByte as default max gunzip size */
+-#define CONFIG_SYS_BOOTM_LEN	0x800000
++//#define CONFIG_SYS_BOOTM_LEN	0x800000
++#define CONFIG_SYS_BOOTM_LEN	0x1dcd6500  // 500MB
+ #endif
+ 
+ #define IH_INITRD_ARCH IH_ARCH_DEFAULT

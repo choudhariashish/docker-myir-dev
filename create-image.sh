@@ -28,13 +28,8 @@ if [ ! -f share/04-Source/mys-8mmx-yocto.tar.gz ]; then
     echo "Setup Linux build tools/SDK..."
     cp -r ../meta-myir imx-yocto-bsp/sources/
     cd imx-yocto-bsp/
-
-    echo "Prepare build scipt for yocto..."
-    echo "#!/bin/bash" >> core.sh
-    echo "cp -r ../../meta-myir sources/" >> core.sh
-    echo "DISTRO=fsl-imx-xwayland MACHINE=mys-8mmx source sources/meta-myir/tools/myir-setup-release.sh -b build-xwayland" >> core.sh
-    echo "bitbake pluto-image-core" >> core.sh
-    echo "source ../../scripts/pluto.sh" >> core.sh
+    echo "Copy build scipt for yocto..."
+    cp ../../scripts/core.sh .
     chmod +x core.sh
 
     cd ../../../
