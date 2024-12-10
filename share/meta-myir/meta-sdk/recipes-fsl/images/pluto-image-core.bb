@@ -20,6 +20,9 @@ CONFLICT_DISTRO_FEATURES = "directfb"
 inherit logging
 inherit core-image
 
+DEPENDS += "u-boot-mkimage-native dtc-native"
+
+
 IMAGE_FSTYPES += " cpio.gz"
 
 ## Select Image Featurest
@@ -108,15 +111,20 @@ EOF
 # Shell function example.
 do_plutosh_rootfs_postprocess_command() {
     bbwarn "do_plutosh_rootfs_postprocess_command"
+}
+
+do_fitimage() {
+    bbwarn "Creating pluto fitimage..."
     create_fitimage
 }
 
+addtask do_fitimage after do_image_wic
+do_fitimage[nostamp] = "1"
 
 # Python function example.
 fakeroot python do_plutopy_rootfs_postprocess_command () {
     bb.warn("do_plutopy_rootfs_postprocess_command")
 }
-
 
 # https://blog.linumiz.com/archives/16540
 ROOTFS_POSTPROCESS_COMMAND += "do_plutosh_rootfs_postprocess_command; do_plutopy_rootfs_postprocess_command;"
