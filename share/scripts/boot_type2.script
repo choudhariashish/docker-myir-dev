@@ -58,7 +58,7 @@ echo "Image Selection=>"
 echo "P1_IMAGE_COUNT => ${P1_IMAGE_COUNT}"
 echo "P2_IMAGE_COUNT => ${P2_IMAGE_COUNT}"
 
-
+setenv bootargs 'root=/dev/mmcblk1p3 rw'
 if test ${P2_IMAGE_COUNT} = 1; then
     echo "Found image for P2"
 
@@ -103,7 +103,7 @@ if test ${P2_IMAGE_COUNT} = 1; then
     fi
 fi
 
-
+setenv bootargs 'root=/dev/mmcblk1p2 rw'
 if test ${P1_IMAGE_COUNT} = 1; then
     echo "Found image for P1"
     echo "Loading P1..."
