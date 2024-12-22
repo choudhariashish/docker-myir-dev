@@ -13,7 +13,6 @@ DESCRIPTION = "A minimum Pluto Image."
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-
 require recipes-fsl/images/imx-image-multimedia.bb
 CONFLICT_DISTRO_FEATURES = "directfb"
 
@@ -21,7 +20,6 @@ inherit logging
 inherit core-image
 
 DEPENDS += "u-boot-mkimage-native dtc-native"
-
 
 IMAGE_FSTYPES += " cpio.gz"
 
@@ -66,8 +64,8 @@ cat << EOF > ${ARTIFACTS_DIR}/pluto-image.its
             };
         };
         fdt {
-            description = "DTB";
-            data = /incbin/("mys-imx8mm-lt8912-hontron-7-v20-mys-8mmx.dtb");
+            description = "DTB";    
+            data = /incbin/("pluto-imx8mm-evk-rpmsg.dtb");
             type = "flat_dt";
             arch = "arm64";
             compression = "none";
