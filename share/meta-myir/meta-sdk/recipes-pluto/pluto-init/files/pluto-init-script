@@ -1,3 +1,9 @@
 #!/bin/bash
 
+
+exec 1> >(logger -s -t $(basename $0)) 2>&1
+
 echo "Running Pluto init script..."
+echo "Setting up eth0 to 192.168.1.5"
+ifconfig eth0 192.168.1.5
+

@@ -1,5 +1,7 @@
 [Unit]
 Description=Startup script for Pluto applications.
+After=network-online.target
+Wants=network-online.target
 
 [Service]
 ExecStart=/usr/bin/pluto-init-script

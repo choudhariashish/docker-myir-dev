@@ -12,6 +12,16 @@ setenv serverip 192.168.1.30
 setenv netmask 255.255.255.0
 setenv ethaddr ab:bc:cd:de:ef:fa
 
+setenv m4_boot_addr 0x7E0000
+setenv m4_boot_temp_addr 0x48000000
+setenv m4_image m4.bin
+saveenv
+
+echo "----------------------------------------------------"
+echo "Booting MCU Firmware=>"
+fatload mmc 1:1 ${m4_boot_temp_addr} ${m4_image}
+cp.b ${m4_boot_temp_addr} ${m4_boot_addr} 0x20000
+bootaux ${m4_boot_addr}
 
 P1_IMAGE=/p1/fitimage.fit
 P1_IMAGE_COUNT=0

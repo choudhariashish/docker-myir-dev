@@ -14,8 +14,8 @@ LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
 
-#require recipes-fsl/images/imx-image-multimedia.bb
-#CONFLICT_DISTRO_FEATURES = "directfb"
+require recipes-fsl/images/imx-image-multimedia.bb
+CONFLICT_DISTRO_FEATURES = "directfb"
 
 inherit logging
 inherit core-image
@@ -34,6 +34,7 @@ IMAGE_FEATURES += " \
 "
 
 CORE_IMAGE_EXTRA_INSTALL += " \
+    xrandr \
     ntp \
     tcpdump \
     ${@bb.utils.contains('MACHINENAME', 'myd-imx8mm', 'start-service', '', d)} \
