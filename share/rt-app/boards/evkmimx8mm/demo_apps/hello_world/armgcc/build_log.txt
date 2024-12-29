@@ -1,0 +1,23 @@
+Scanning dependencies of target hello_world.elf
+[  4%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/boards/evkmimx8mm/demo_apps/hello_world/hello_world.c.obj
+[  9%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/boards/evkmimx8mm/demo_apps/hello_world/pin_mux.c.obj
+[ 14%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/boards/evkmimx8mm/demo_apps/hello_world/board.c.obj
+[ 19%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/boards/evkmimx8mm/demo_apps/hello_world/clock_config.c.obj
+[ 23%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/devices/MIMX8MM6/drivers/fsl_mu.c.obj
+[ 28%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/boards/evkmimx8mm/demo_apps/hello_world/empty_rsc_table.c.obj
+[ 33%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/devices/MIMX8MM6/drivers/fsl_common.c.obj
+[ 38%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/devices/MIMX8MM6/drivers/fsl_clock.c.obj
+[ 47%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/devices/MIMX8MM6/utilities/debug_console/fsl_debug_console.c.obj
+[ 47%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/devices/MIMX8MM6/drivers/fsl_rdc.c.obj
+[ 52%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/devices/MIMX8MM6/utilities/str/fsl_str.c.obj
+[ 57%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/components/uart/iuart_adapter.c.obj
+[ 61%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/components/serial_manager/serial_manager.c.obj
+[ 66%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/components/serial_manager/serial_port_uart.c.obj
+[ 71%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/devices/MIMX8MM6/drivers/fsl_uart.c.obj
+[ 76%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/components/lists/generic_list.c.obj
+[ 80%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/devices/MIMX8MM6/system_MIMX8MM6_cm4.c.obj
+[ 85%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/devices/MIMX8MM6/utilities/fsl_sbrk.c.obj
+[ 90%] Building C object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/devices/MIMX8MM6/utilities/fsl_assert.c.obj
+[ 95%] Building ASM object CMakeFiles/hello_world.elf.dir/home/ashish/dev/docker-myir-dev/share/rt-app/devices/MIMX8MM6/gcc/startup_MIMX8MM6_cm4.S.obj
+[100%] Linking C executable debug/hello_world.elf
+[100%] Built target hello_world.elf
