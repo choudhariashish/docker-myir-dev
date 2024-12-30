@@ -1,0 +1,23 @@
+Scanning dependencies of target pluto-rt.elf
+[  4%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/pluto-mcu/apps/pluto-rt/pluto-rt.c.obj
+[  9%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/pluto-mcu/apps/pluto-rt/board.c.obj
+[ 14%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/pluto-mcu/apps/pluto-rt/pin_mux.c.obj
+[ 19%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/pluto-mcu/apps/pluto-rt/clock_config.c.obj
+[ 23%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/drivers/fsl_mu.c.obj
+[ 28%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/pluto-mcu/apps/pluto-rt/empty_rsc_table.c.obj
+[ 38%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/drivers/fsl_common.c.obj
+[ 38%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/drivers/fsl_clock.c.obj
+[ 42%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/drivers/fsl_rdc.c.obj
+[ 47%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/utilities/debug_console/fsl_debug_console.c.obj
+[ 52%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/utilities/str/fsl_str.c.obj
+[ 57%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/components/uart/iuart_adapter.c.obj
+[ 61%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/components/lists/generic_list.c.obj
+[ 66%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/components/serial_manager/serial_port_uart.c.obj
+[ 71%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/components/serial_manager/serial_manager.c.obj
+[ 76%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/drivers/fsl_uart.c.obj
+[ 85%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/utilities/fsl_assert.c.obj
+[ 85%] Building ASM object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/gcc/startup_MIMX8MM6_cm4.S.obj
+[ 90%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/system_MIMX8MM6_cm4.c.obj
+[ 95%] Building C object CMakeFiles/pluto-rt.elf.dir/home/ashish/dev/docker-myir-dev/share/04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/utilities/fsl_sbrk.c.obj
+[100%] Linking C executable debug/pluto-rt.elf
+[100%] Built target pluto-rt.elf
