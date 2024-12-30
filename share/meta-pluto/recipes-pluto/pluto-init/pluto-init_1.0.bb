@@ -34,6 +34,7 @@ do_install() {
 
     install -d ${D}${bindir}
     install -m 0755 helloworld ${D}${bindir}
+    install -m 0755 pluto-ipc ${D}${bindir}
     install -m 0755 pluto-init-script ${D}${bindir}
 
     install -d ${D}/${systemd_unitdir}/system

@@ -38,7 +38,8 @@ CORE_IMAGE_EXTRA_INSTALL += " \
     ${@bb.utils.contains('MACHINENAME', 'myd-imx8mm', 'start-service', '', d)} \
     ${@bb.utils.contains('MACHINENAME', 'myd-imx8mm', 'staticip-network', '', d)} \
     autorun-script \
-    pluto \
+    pluto-init \
+    pluto-ipc \
 "
 
 create_fitimage() {
