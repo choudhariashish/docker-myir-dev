@@ -1,3 +1,0 @@
-/home/ashish/dev/docker-myir-dev/share/pluto-mcu/apps/pluto-rt/armgcc/CMakeFiles/pluto-rt.elf.dir
-/home/ashish/dev/docker-myir-dev/share/pluto-mcu/apps/pluto-rt/armgcc/CMakeFiles/edit_cache.dir
-/home/ashish/dev/docker-myir-dev/share/pluto-mcu/apps/pluto-rt/armgcc/CMakeFiles/rebuild_cache.dir
