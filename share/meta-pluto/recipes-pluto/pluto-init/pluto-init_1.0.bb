@@ -31,6 +31,7 @@ do_install() {
     ARTIFACTS_DIR=${DEPLOY_DIR}/images/mys-8mmx/
     cp -r pluto-imx8mm-evk-rpmsg.dts ${ARTIFACTS_DIR}
     dtc -O dtb -o ${ARTIFACTS_DIR}/pluto-imx8mm-evk-rpmsg.dtb ${ARTIFACTS_DIR}/pluto-imx8mm-evk-rpmsg.dts
+    dtc -I dtb -o ${ARTIFACTS_DIR}/mys-imx8mm-lt8912-hontron-7-v20.dts ${ARTIFACTS_DIR}/mys-imx8mm-lt8912-hontron-7-v20.dtb
 
     install -d ${D}${bindir}
     install -m 0755 helloworld ${D}${bindir}
