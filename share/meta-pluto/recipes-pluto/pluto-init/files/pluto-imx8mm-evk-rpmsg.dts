@@ -929,7 +929,7 @@
 				clocks = <0x02 0xaa 0x02 0xaa>;
 				clock-names = "ipg\0per";
 				#pwm-cells = <0x02>;
-				status = "disabled";u
+				status = "disabled";
 				pinctrl-names = "default";
 				pinctrl-0 = <0x1f>;
 				phandle = <0x6a>;
@@ -1068,8 +1068,8 @@
 				clock-names = "ipg\0per";
 				dmas = <0x21 0x1a 0x04 0x00 0x21 0x1b 0x04 0x00>;
 				dma-names = "rx\0tx";
-				status = "disabled";
-				pinctrl-names = "default";
+				status = "okay";
+				pinctrl-names = "mcu";
 				assigned-clocks = <0x02 0x81>;
 				assigned-clock-parents = <0x02 0x31>;
 				fsl,uart-has-rtscts;
