@@ -929,7 +929,7 @@
 				clocks = <0x02 0xaa 0x02 0xaa>;
 				clock-names = "ipg\0per";
 				#pwm-cells = <0x02>;
-				status = "okay";
+				status = "disabled";u
 				pinctrl-names = "default";
 				pinctrl-0 = <0x1f>;
 				phandle = <0x6a>;

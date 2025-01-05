@@ -68,36 +68,12 @@ void BOARD_InitPins(void) {                                /*!< Function assigne
                         IOMUXC_SW_PAD_CTL_PAD_DSE(6U) |
                         IOMUXC_SW_PAD_CTL_PAD_FSEL(2U));
 
-
-
-
-    IOMUXC_SetPinMux(IOMUXC_SPDIF_TX_PWM3_OUT, 0U);
-    IOMUXC_SetPinConfig(IOMUXC_SPDIF_TX_PWM3_OUT, 
-                        IOMUXC_SW_PAD_CTL_PAD_DSE(6U) |
-                        IOMUXC_SW_PAD_CTL_PAD_FSEL(2U));
-
-
-
-
-    IOMUXC_SetPinMux(IOMUXC_GPIO1_IO01_PWM1_OUT, 0U);
-    IOMUXC_SetPinMux(IOMUXC_SPDIF_EXT_CLK_PWM1_OUT, 0U);
-    IOMUXC_SetPinMux(IOMUXC_I2C4_SDA_PWM1_OUT, 0U);
-    // IOMUXC_SetPinConfig(IOMUXC_I2C4_SDA_PWM1_OUT,
-    //                     IOMUXC_SW_PAD_CTL_PAD_DSE(6U) |
-    //                     IOMUXC_SW_PAD_CTL_PAD_FSEL(2U));
-
-
-
     // Working.
     IOMUXC_SetPinMux(IOMUXC_SAI3_MCLK_PWM4_OUT, 0U);
     IOMUXC_SetPinMux(IOMUXC_I2C3_SCL_PWM4_OUT, 0U);
     IOMUXC_SetPinConfig(IOMUXC_I2C3_SCL_PWM4_OUT,
                         IOMUXC_SW_PAD_CTL_PAD_DSE(6U) |
                         IOMUXC_SW_PAD_CTL_PAD_FSEL(2U));
-
-    // IOMUXC_SetPinMux(IOMUXC_I2C3_SCL_PWM4_OUT, 0U);
-    // IOMUXC_SetPinMux(IOMUXC_I2C3_SDA_PWM3_OUT, 0U);
-    // IOMUXC_SetPinMux(IOMUXC_I2C4_SCL_PWM2_OUT, 0U);
 }
 
 /***********************************************************************************************************************

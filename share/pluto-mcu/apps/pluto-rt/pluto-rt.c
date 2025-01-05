@@ -8,13 +8,13 @@
 #include "fsl_pwm.h"
 #include "fsl_mu.h"
 
-#define DEMO_PWM_BASEADDR   PWM1
-#define DEMO_PWM_IRQn       PWM1_IRQn
-#define DEMO_PWM_IRQHandler PWM1_IRQHandler
+// #define DEMO_PWM_BASEADDR   PWM1
+// #define DEMO_PWM_IRQn       PWM1_IRQn
+// #define DEMO_PWM_IRQHandler PWM1_IRQHandler
 
-// #define DEMO_PWM_BASEADDR   PWM4
-// #define DEMO_PWM_IRQn       PWM4_IRQn
-// #define DEMO_PWM_IRQHandler PWM4_IRQHandler
+#define DEMO_PWM_BASEADDR   PWM4
+#define DEMO_PWM_IRQn       PWM4_IRQn
+#define DEMO_PWM_IRQHandler PWM4_IRQHandler
 
 #define PWM_PERIOD_VALUE    80
 
