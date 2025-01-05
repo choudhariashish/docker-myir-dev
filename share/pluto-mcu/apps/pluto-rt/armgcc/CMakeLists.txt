@@ -1036,6 +1036,8 @@ add_executable(pluto-rt.elf
 "${ProjDirPath}/../../../../04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/drivers/fsl_mu.c"
 "${ProjDirPath}/../../../../04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/drivers/fsl_clock.c"
 "${ProjDirPath}/../../../../04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/drivers/fsl_clock.h"
+"${ProjDirPath}/../../../../04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/drivers/fsl_pwm.c"
+"${ProjDirPath}/../../../../04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/drivers/fsl_pwm.h"
 "${ProjDirPath}/../../../../04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/drivers/fsl_common.c"
 "${ProjDirPath}/../../../../04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/drivers/fsl_common.h"
 "${ProjDirPath}/../../../../04-Source/m4/SDK_2.8.0_EVK-MIMX8MM/devices/MIMX8MM6/drivers/fsl_rdc.c"
